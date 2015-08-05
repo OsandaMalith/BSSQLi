@@ -1,5 +1,3 @@
-package bssql;
-
 import java.net.*;
 import java.io.*;
 
